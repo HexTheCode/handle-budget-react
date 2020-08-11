@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Error from "./Error";
 import ShortId from "shortid";
+import PropTypes from "prop-types";
 
-const Form = ({ agregarNuevoGasto }) => {
+const Form = ({ saveGasto, crearGasto }) => {
   const [nombreGasto, saveNombre] = useState("");
   const [cantidad, saveCantidad] = useState(0);
   const [error, saveError] = useState(false);
@@ -25,7 +26,8 @@ const Form = ({ agregarNuevoGasto }) => {
 
     // pasar gasto componente principal
 
-    agregarNuevoGasto(gasto);
+    saveGasto(gasto);
+    crearGasto(true);
 
     // resetear el form
 
@@ -68,6 +70,11 @@ const Form = ({ agregarNuevoGasto }) => {
       />
     </form>
   );
+};
+
+Form.prototype = {
+  crearGasto: PropTypes.func.isRequired(),
+  saveGasto: PropTypes.func.isRequired(),
 };
 
 export default Form;
