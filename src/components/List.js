@@ -1,6 +1,5 @@
 import React from "react";
 import Gasto from "./Gasto";
-import PropTypes from "prop-types";
 
 const List = ({ gastos }) => (
   <div className="gastos-realizados">
@@ -10,9 +9,5 @@ const List = ({ gastos }) => (
     ))}
   </div>
 );
-
-List.prototype = {
-  gastos: PropTypes.array.isRequired(),
-};
 
 export default List;

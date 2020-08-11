@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import Error from "./Error";
-import PropTypes from "prop-types";
 
 const Question = ({ saveRestante, savePresupuesto, updateQuestion }) => {
   // Crear State
@@ -52,12 +51,6 @@ const Question = ({ saveRestante, savePresupuesto, updateQuestion }) => {
       </form>
     </Fragment>
   );
-};
-
-Question.prototype = {
-  saveRestante: PropTypes.func.isRequired(),
-  savePresupuesto: PropTypes.func.isRequired(),
-  updateQuestion: PropTypes.func.isRequired(),
 };
 
 export default Question;
