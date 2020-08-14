@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Error from "./Error";
 import ShortId from "shortid";
+import PropTypes from "prop-types";
 
 const Form = ({ saveGasto, crearGasto }) => {
   const [nombreGasto, saveNombre] = useState("");
@@ -69,6 +70,11 @@ const Form = ({ saveGasto, crearGasto }) => {
       />
     </form>
   );
+};
+
+Form.prototype = {
+  saveGasto: PropTypes.func.isRequired,
+  crearGasto: PropTypes.func.isRequired,
 };
 
 export default Form;

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { revisarPresupuesto } from "../helpers";
+import PropTypes from "prop-types";
 
 const Budget = ({ presupuesto, restante }) => {
   return (
@@ -10,6 +11,11 @@ const Budget = ({ presupuesto, restante }) => {
       </div>
     </Fragment>
   );
+};
+
+Budget.prototype = {
+  presupuesto: PropTypes.string.isRequired,
+  restante: PropTypes.string.isRequired,
 };
 
 export default Budget;
